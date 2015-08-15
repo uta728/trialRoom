@@ -1,0 +1,105 @@
+<!-- スタイルシート読み込み -->
+<%= stylesheet_link_tag "custom", :media => "all" %>
+
+<!-- 操作ボタン -->
+<%= render "moji_slide/slide_menu" %>
+
+<!-- 問題番号 -->
+<h1 class="header">第1問（全10問）</h1>
+
+<!-- 問題 -->
+<% @slideList.each_with_index do |slide, i| %>
+  <div id="slide<%= i %>" class="slide centering <%= i == 0 ? '' : 'nonDisp' %>">
+    <%= render "moji_slide/q" + slide[:type].to_s, :slide => slide %>
+  </div>
+<% end %>
+
+<!-- 結果画面 -->
+<div id="resultPage" class="centering">
+  おしまい
+
+  <table id="resultTable">
+  </table>
+
+</div>
+
+<script type="text/javascript">
+/** 現在の問題番号（０〜） */
+var currentIdx = 0;
+/** 結果リスト */
+var resultList = new Array();
+
+/**
+ * ヒントボタンクリック
+ */
+function showHint() {
+  $("#slide" + currentIdx + " .image #ng0").hide("normal");
+  $("#slide" + currentIdx + " .image div").animate({marginLeft: "100px"});
+}
+
+/**
+ * スキップボタンクリック
+ */
+function skip() {
+  next();
+}
+
+/**
+ * 終了ボタンクリック
+ */
+function endSlide() {
+  top.location.href = "<%= moji_slide_index_path %>";
+}
+
+/**
+ * もう１回
+ */
+function retry() {
+  top.location.href = "<%= moji_slide_slide_path %>";
+}
+
+/**
+ * 次のスライドを表示
+ */
+function next() {
+  $("#slide" + currentIdx).hide();
+
+  currentIdx++;
+  // 次の問題を表示
+  if (currentIdx < 10) {
+    $("#slide" + currentIdx).show();
+    $(".header").html("第" + (currentIdx + 1) + "問（全１０問）");
+
+  // 全問終了
+  } else {
+    $(".header").hide();
+    $(".btn-panel #slideBtn").hide();
+    $(".btn-panel #resultBtn").show();
+
+    $.each(resultList, function(i, value) {
+        $("#resultPage #resultTable").append(
+          "<tr>" +
+          "<th>第" + (i + 1) + "問</th>" +
+          "<td>" + value["moji"] + "</td>" +
+          "<td><img src='" + value["imgUrl"] + "' width='100px'></td>" +
+          "<td>" + value["result"] + "</td>" +
+          "</tr>");
+      });
+    $("#resultPage").show();
+  }
+}
+
+/**
+ * 絵をタッチ
+ */
+function clickAnswer(key, moji, imgUrl) {
+  $("#slide" + currentIdx + " .answer-box .result").show();
+
+  // 結果リストへ追加
+  resultList.push({ result:(key=="ok"?"◯":"×"), moji:moji, imgUrl:imgUrl });
+
+  // 1秒待ってから次の問題へ
+  setTimeout("next()", 1000);
+}
+
+</script>

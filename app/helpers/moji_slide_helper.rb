@@ -1,0 +1,2 @@
+module MojiSlideHelper
+end

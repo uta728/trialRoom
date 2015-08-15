@@ -1,0 +1,29 @@
+<div class="question">正しい絵はどれかな？</div>
+
+<div class="question-box">
+  <div class="moji">
+    <%= slide[:yomi_v] %>
+  </div>
+</div>
+
+<div class="answer-box">
+  <% slide[:image_key].each do |key| %>
+    <div id="<%= key %>" class="answer-sel" onclick="clickAnswer('<%= key %>', '<%= slide[:yomi] %>', '<%= slide[:image]["ok"] %>');">
+      <div class="image">
+        <img src="<%= slide[:image][key] %>" alt="<%= slide[:yomi] %>" class="selImg">
+      </div>
+    </div>
+  <% end %>
+  <div style="clear:both;"></div>
+</div>
+
+<div class="answer-box">
+  <% slide[:image_key].each do |key| %>
+    <div id="<%= key %>-result" class="answer-sel result">
+      <div class="image">
+        <%= image_tag(key == "ok" ? "maru.png" : "batsu.png") %>
+      </div>
+    </div>
+  <% end %>
+  <div style="clear:both;"></div>
+</div>

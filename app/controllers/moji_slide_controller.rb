@@ -1,6 +1,6 @@
-require 'URI'
-require 'OPEN-URI'
-require 'JSON'
+require 'uri'
+require 'open-uri'
+require 'json'
 
 class MojiSlideController < ApplicationController
 

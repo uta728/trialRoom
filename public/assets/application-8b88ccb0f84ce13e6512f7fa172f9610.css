@@ -1,0 +1,158 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+
+
+ */
+
+BODY {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  font-family: 'Lucida Grande',
+               'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3',
+               Meiryo, メイリオ, sans-serif;
+}
+/* line 4, /Users/uta/dev/ruby/rails/trialRoom/app/assets/stylesheets/moji_slide.css.scss */
+.centering {
+  text-align: center;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 11, /Users/uta/dev/ruby/rails/trialRoom/app/assets/stylesheets/moji_slide.css.scss */
+.slide {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 800px;
+  min-height: 700px;
+  height: auto !important;
+  height: 700px;
+}
+/* line 19, /Users/uta/dev/ruby/rails/trialRoom/app/assets/stylesheets/moji_slide.css.scss */
+.slide .question {
+  width: 30px;
+  font-size: 30px;
+  position: absolute;
+  top: 0px;
+  left: 700px;
+}
+/* line 27, /Users/uta/dev/ruby/rails/trialRoom/app/assets/stylesheets/moji_slide.css.scss */
+.slide .question-box {
+  width: 100%;
+  position: absolute;
+  top: 30px;
+  text-align: center;
+  padding: 2px;
+}
+/* line 35, /Users/uta/dev/ruby/rails/trialRoom/app/assets/stylesheets/moji_slide.css.scss */
+.slide .answer-box {
+  width: 100%;
+  position: absolute;
+  top: 650px;
+  text-align: center;
+  padding: 2px;
+}
+/* line 43, /Users/uta/dev/ruby/rails/trialRoom/app/assets/stylesheets/moji_slide.css.scss */
+.slide .result {
+  display: none;
+}
+/* line 47, /Users/uta/dev/ruby/rails/trialRoom/app/assets/stylesheets/moji_slide.css.scss */
+.slide .answer-sel {
+  float: left;
+  margin-right: 5px;
+  width: 250px;
+}
+/* line 53, /Users/uta/dev/ruby/rails/trialRoom/app/assets/stylesheets/moji_slide.css.scss */
+.slide .moji {
+  margin: auto;
+  border: 3px solid #ccc;
+  padding: 10px 30px 10px 30px;
+  width: 100px;
+  font-size: 70px;
+}
+/* line 61, /Users/uta/dev/ruby/rails/trialRoom/app/assets/stylesheets/moji_slide.css.scss */
+.slide .image {
+  margin: auto;
+}
+/* line 64, /Users/uta/dev/ruby/rails/trialRoom/app/assets/stylesheets/moji_slide.css.scss */
+.slide .image .selImg {
+  width: 250px;
+  border: 1px solid #999;
+}
+
+/* line 71, /Users/uta/dev/ruby/rails/trialRoom/app/assets/stylesheets/moji_slide.css.scss */
+.nonDisp {
+  display: none;
+}
+
+/* line 75, /Users/uta/dev/ruby/rails/trialRoom/app/assets/stylesheets/moji_slide.css.scss */
+.btn-panel {
+  margin-top: 20px;
+  margin-bottom: 50px;
+  width: 630px;
+  min-height: 70px;
+  height: auto !important;
+  height: 70px;
+}
+/* line 83, /Users/uta/dev/ruby/rails/trialRoom/app/assets/stylesheets/moji_slide.css.scss */
+.btn-panel div {
+  position: relative;
+  float: left;
+  font-weight: bold;
+}
+/* line 89, /Users/uta/dev/ruby/rails/trialRoom/app/assets/stylesheets/moji_slide.css.scss */
+.btn-panel #resultBtn {
+  display: none;
+}
+/* line 93, /Users/uta/dev/ruby/rails/trialRoom/app/assets/stylesheets/moji_slide.css.scss */
+.btn-panel .btn-hint {
+  width: 250px;
+  padding: 5px;
+  font-size: 50px;
+  background: #00c;
+  color: #fff;
+}
+/* line 101, /Users/uta/dev/ruby/rails/trialRoom/app/assets/stylesheets/moji_slide.css.scss */
+.btn-panel .btn-skip {
+  width: 250px;
+  padding: 5px;
+  font-size: 50px;
+  background: #cc0;
+  color: #fff;
+}
+/* line 109, /Users/uta/dev/ruby/rails/trialRoom/app/assets/stylesheets/moji_slide.css.scss */
+.btn-panel .btn-end {
+  width: 100px;
+  padding: 5px;
+  font-size: 50px;
+  background: #c00;
+  color: #fff;
+}
+/* line 117, /Users/uta/dev/ruby/rails/trialRoom/app/assets/stylesheets/moji_slide.css.scss */
+.btn-panel .btn-retry {
+  width: 230px;
+  padding: 5px;
+  font-size: 50px;
+  background: #0cc;
+  color: #fff;
+}
+
+/* line 126, /Users/uta/dev/ruby/rails/trialRoom/app/assets/stylesheets/moji_slide.css.scss */
+#resultPage {
+  margin-top: 20px;
+  margin-bottom: 50px;
+  width: 800px;
+  min-height: 700px;
+  height: auto !important;
+  height: 700px;
+  display: none;
+}

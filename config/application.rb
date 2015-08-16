@@ -2,8 +2,6 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
-# For Heroku
-#config.assets.initialize_on_precompile = false
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -24,3 +22,6 @@ module TrialRoom
     # config.i18n.default_locale = :de
   end
 end
+
+# For Heroku
+config.assets.initialize_on_precompile = false
